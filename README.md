@@ -81,7 +81,7 @@ graph LR
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/your-username/long-arithmetic
+git clone https://github.com/ivanoskov/long-number-implementation
 ```
 
 2. Соберите проект:
