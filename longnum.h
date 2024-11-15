@@ -1,20 +1,23 @@
 #ifndef LONGNUM_H
 #define LONGNUM_H
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-#define BASE 1000000000
-#define MAX_DIGITS 100000
-
 typedef struct {
-    int digits[MAX_DIGITS];  // массив для хранения цифр числа
-    int length;              // текущая длина числа
+    int *digits;     // динамический массив для хранения цифр
+    int capacity;    // текущая ёмкость массива
+    int length;      // текущая длина числа
 } LongNum;
+
+// Добавим объявление глобальной переменной
+extern char memory_messages[1000];
 
 // Инициализация длинного числа
 void initLongNum(LongNum *num);
+
+// Освобождение памяти
+void freeLongNum(LongNum *num);
+
+// Увеличение размера массива при необходимости
+void ensureCapacity(LongNum *num, int minCapacity);
 
 // Умножение длинного числа на обычное целое число
 void multiplyByInt(LongNum *num, int multiplier);

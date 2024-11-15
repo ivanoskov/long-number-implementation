@@ -3,8 +3,8 @@ CFLAGS=-Wall -Wextra -O2
 
 all: factorial
 
-factorial: main.c longnum.h
-	$(CC) $(CFLAGS) main.c -o factorial
+factorial: main.c longnum.c longnum.h
+	$(CC) $(CFLAGS) main.c longnum.c -o factorial
 
 clean:
 	rm -f factorial
